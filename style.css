@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'DKC Forever';
+    src: url('font/DKC Forever.ttf');
+}
+@font-face { 
+    font-family: 'Scriptonite Demo';
+    src: url('font/Scriptonite Demo.ttf');
+}
+@font-face { 
+    font-family: 'WHOOPASS';
+    src: url('font/WHOOPASS.TTF');
+}
+@font-face { 
+    font-family: 'TypoGraphica';
+    src: url('font/TypoGraphica.otf');
+}
+body
+{
+	background-image: url('fond.jpg');
+}
+#title
+{
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	border-top: 2px black solid;
+	border-bottom: 2px black solid;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-top: -9px;
+	margin-bottom: 8px;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-family: 'TypoGraphica';
+
+}
+
+#clock
+{
+	border: 2px black solid;
+	background-color: rgba(255, 255, 255, 0.9);
+	font-size: 85px;
+	font-weight: bold;
+	border-radius: 15px;
+	width: 215px;
+	text-align: center;
+	font-family: 'TypoGraphica';
+
+}
+#calendar
+{
+	border: 2px black solid;
+	background-color: rgba(255, 255, 255, 0.9);
+	font-size: 45px;
+	font-weight: bold;
+	border-radius: 15px;
+	width: 140px;
+	height: 117px;
+	text-align: center;
+	font-family: 'TypoGraphica';
+
+}
+#Rungis0
+{
+	background-color: black;
+	border: 5px red solid;
+	border-radius: 15px;
+	text-align: center;
+	width: 438px;
+	background-image: url('rungis.jpg');
+	opacity: 0.5;
+	margin: 0px;
+	font-family: 'TypoGraphica';
+	height: 110px;
+}
+#Rungis0 h3
+{
+	color: #DDDDDD;
+	margin: 0px;
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+#Rungis0 h2
+{
+	color: #7FDBFF;
+	margin: 0px;
+	margin-bottom: 5px;
+	font-size: 28px;
+}
+#Rungis0, #clock, #calendar
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+}
+
+#box_div
+{
+	background-color: rgba(255, 255, 255, 0.9);
+	border-top: 2px black solid;
+	border-bottom: 2px black solid;
+	margin-left: -10px;
+	margin-right: -10px;
+	text-align: center;
+}
+
+.box1
+{
+	display: inline-block;
+	border: 2px #404040 solid;
+	padding: 5px;
+	border-radius: 15px;
+	vertical-align: top;
+	text-align: right;
+	width: 250px;
+	height: 275px;
+	background-image: url('bat.jpg');
+	opacity: 0.5;
+	font-family: 'DKC Forever';
+	font-size: 9px;
+	color: #111111;
+
+}
+.box1 h3
+{
+	margin-top: 15px;
+}
+.box1 h2
+{
+	margin: 0px;
+	margin-top: 5px;
+}
+.box2
+{
+	display: inline-block;
+	border: 2px #404040 solid;
+	padding: 5px;
+	border-radius: 15px;
+	vertical-align: top;
+	text-align: right;
+	width: 250px;
+	height: 275px;
+	background-image: url('super.jpg');
+	opacity: 0.5;
+	font-family: 'Scriptonite Demo';
+
+}
+.box2 h3
+{
+	margin-top: 8px;
+	font-family: 'DKC Forever';
+	font-size: 11px;
+}
+.box2 h2
+{
+	color: #FF4136;
+	font-size: 29px;
+	margin: 0px;
+}
+.box3
+{
+	display: inline-block;
+	border: 2px #404040 solid;
+	padding: 5px;
+	border-radius: 15px;
+	vertical-align: top;
+	text-align: right;
+	margin: 2px;
+	width: 250px;
+	height: 275px;
+	background-image: url('wonder.jpg');
+	opacity: 0.5;
+	font-family: 'WHOOPASS';
+
+}
+.box3 h3
+{
+	margin-top: 10px;
+	font-family: 'DKC Forever';
+	font-size: 11px;
+
+}
+.box3 h2
+{
+	color: #FF851B;
+	margin: 0px;
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+#console
+{
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	width: 80%;
+	height: 140px;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: black;
+	border-radius: 15px;
+	color: #AAAAAA;
+
+}
+#client
+{
+	border: 2px black solid;
+	background-color: rgba(255, 255, 255, 0.9);
+	font-size: 45px;
+	font-weight: bold;
+	border-radius: 15px;
+	width: 140px;
+	height: 140px;
+	text-align: center;
+	font-family: 'TypoGraphica';
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+	padding-top: 5px;
+}
