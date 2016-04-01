@@ -1,11 +1,16 @@
-/**
- * Created by Benjamin on 24/03/2016.
- */
 'use strict';
-var elm_textarea = document.getElementById('console');
-var elm_clock = document.getElementById('clock');
-
-
+/*
+ * ------------------------------------------------------------------------
+ * HTML : Clock,Text Area
+ * ------------------------------------------------------------------------
+ */
+const elm_textarea = document.getElementById('console');
+const elm_clock = document.getElementById('clock');
+/*
+ * ------------------------------------------------------------------------
+ * Class : Customer
+ * ------------------------------------------------------------------------
+ */
 module.exports = {
     Customer: class Customer{
         constructor(id, restaurantsList)
@@ -18,16 +23,12 @@ module.exports = {
 
         setAlreadyEaten(){
             this.alreadyEaten = true;
-            //this.html_textArea('Event Customer : The client number ' + this.id + ' has eaten');
         }
 
         tryRestaurant(){
             var chosenRestaurant = this.restaurantsList[Math.floor(Math.random() * (this.restaurantsList.length))];
-            /*console.log('Event Customer : The client number ' + this.id + ' chose ' + chosenRestaurant.name);
-            this.html_textArea('Event Customer : The client number ' + this.id + ' chose ' + chosenRestaurant.name);*/
             return new Promise((resolve, reject) => {
                 if (chosenRestaurant.open && chosenRestaurant.isAnyReceiptAvailable()) {
-                    //this.html_textArea('Event Customer : The client number ' + this.id + ' successfully entered to ' + chosenRestaurant.name);
                     resolve('Event Customer : The client number ' + this.id + ' successfully entered to ' + chosenRestaurant.name);
                     setTimeout(() => {this.chooseMeal(chosenRestaurant)
                         .then((data) => this.html_textArea(data))
@@ -37,7 +38,6 @@ module.exports = {
 
                 else {
                     if (!chosenRestaurant.open){
-                        //this.html_textArea('Event Customer : The client number ' + this.id + ' tried to enter to ' + chosenRestaurant.name + ' but it is closed !');
                         reject('Event Customer : The client number ' + this.id + ' tried to enter to ' + chosenRestaurant.name + ' but it is closed !');
                         setTimeout(() => {
                             this.tryRestaurant()
@@ -46,7 +46,6 @@ module.exports = {
                         }, 310);
                     }
                     else if (!chosenRestaurant.isAnyReceiptAvailable()){
-                        //this.html_textArea('Event Customer : The client number ' + this.id + ' tried to enter to ' + chosenRestaurant.name + ' but they don\'t have any meal available anymore !');
                         reject('Event Customer : The client number ' + this.id + ' tried to enter to ' + chosenRestaurant.name + ' but they don\'t have any meal available anymore !');
                         setTimeout(() => {
                             this.tryRestaurant()
@@ -72,14 +71,10 @@ module.exports = {
                 var timeToServe = restaurant.timeToServe();
                 if (restaurant.isReceiptAvailable(chosenReceiptName)){
                     restaurant.bookTheIngredients(chosenReceiptName, timeToServe);
-                    //console.log('Event Restaurant : ' + chosenReceiptName + ' is available !');
-                    //this.html_textArea('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName + ' and this meal is available !');
                     resolve('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName + ' and this meal is available !');
                     setTimeout(() => {restaurant.cookTheMeal(chosenReceiptName, timeToServe, this.waitingResistance, this.id); this.setAlreadyEaten();}, timeToServe*30);
                 }
                 else if (restaurant.isAnyReceiptAvailable()) {
-                    //console.log('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but this particular meal is not available anymore !');
-                    //this.html_textArea('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but this meal is not available anymore !');
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but this meal is not available anymore !');
                     this.chooseMeal(restaurant)
                         .then((data) => this.html_textArea(data))
@@ -87,8 +82,6 @@ module.exports = {
 
                 }
                 else if (!restaurant.isAnyReceiptAvailable()){
-                    //console.log('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but there is no meal available anymore !');
-                    //this.html_textArea('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but there is no meal available anymore !');
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but there is no meal available anymore !');
                     this.tryRestaurant(this.restaurantsList)
                         .then((data) => this.html_textArea(data))
