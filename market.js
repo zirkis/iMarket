@@ -1,10 +1,16 @@
-/**
- * Created by Benjamin on 23/03/2016.
- */
 'use strict';
-var elm_textarea = document.getElementById('console');
-var elm_clock = document.getElementById('clock');
-
+/*
+ * ------------------------------------------------------------------------
+ * HTML : Clock,Text Area
+ * ------------------------------------------------------------------------
+ */
+const elm_textarea = document.getElementById('console');
+const elm_clock = document.getElementById('clock');
+/*
+ * ------------------------------------------------------------------------
+ * Class : Market
+ * ------------------------------------------------------------------------
+ */
 module.exports = {
     Market: class Market
     {
@@ -27,9 +33,7 @@ module.exports = {
 
         setOpen(bool){
             this.open = bool;
-            //console.log('Event Market : ' + this.name + " is " + this.getOpen());
             this.html_textArea('Event Market : ' + this.name + " is " + this.getOpen());
-
             document.getElementById(this.name + '2').innerHTML = this.getOpen();
         }
 
@@ -47,24 +51,20 @@ module.exports = {
         }
 
         fillStocks(){
-            for (var i in this.stocks){
+            for (let i in this.stocks){
                 this.stocks[i] += 50;
             }
-            //console.log('Event Market : ' + this.name + ' filled its stocks from producers.');
             this.html_textArea('Event Market : ' + this.name + ' filled its stocks from producers.');
             document.getElementById(this.name+'4').innerHTML = this.displayStocks(this.stocks);
-            //console.log(this.stocks);
-            //this.html_textArea(this.displayStocks(this.stocks))
-
         }
+
         emptyStocks(){
-            for (var i in this.stocks){
+            for (let i in this.stocks){
                 this.stocks[i] -= 5;
             }
             this.restaurantsProvided++;
             document.getElementById(this.name+'3').innerHTML = 'Restaurants Provided : ' + this.restaurantsProvided;
             document.getElementById(this.name+'4').innerHTML = this.displayStocks(this.stocks);
-
         }
 
         html_textArea(text){
@@ -73,6 +73,7 @@ module.exports = {
                 elm_textarea.scrollTop = elm_textarea.scrollHeight;
             }
         }
+
         displayStocks(json){
             var list = '';
             for (let i in json){

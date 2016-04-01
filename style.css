@@ -1,22 +1,22 @@
 @font-face {
     font-family: 'DKC Forever';
-    src: url('font/DKC Forever.ttf');
+    src: url('ressources/font/DKC Forever.ttf');
 }
 @font-face { 
     font-family: 'Scriptonite Demo';
-    src: url('font/Scriptonite Demo.ttf');
+    src: url('ressources/font/Scriptonite Demo.ttf');
 }
 @font-face { 
     font-family: 'WHOOPASS';
-    src: url('font/WHOOPASS.TTF');
+    src: url('ressources/font/WHOOPASS.TTF');
 }
 @font-face { 
     font-family: 'TypoGraphica';
-    src: url('font/TypoGraphica.otf');
+    src: url('ressources/font/TypoGraphica.otf');
 }
 body
 {
-	background-image: url('fond.jpg');
+	background-image: url('ressources/img/fond.jpg');
 }
 #title
 {
@@ -66,7 +66,7 @@ body
 	border-radius: 15px;
 	text-align: center;
 	width: 438px;
-	background-image: url('rungis.jpg');
+	background-image: url('ressources/img/rungis.jpg');
 	opacity: 0.5;
 	margin: 0px;
 	font-family: 'TypoGraphica';
@@ -113,7 +113,7 @@ body
 	text-align: right;
 	width: 250px;
 	height: 275px;
-	background-image: url('bat.jpg');
+	background-image: url('ressources/img/bat.jpg');
 	opacity: 0.5;
 	font-family: 'DKC Forever';
 	font-size: 9px;
@@ -139,7 +139,7 @@ body
 	text-align: right;
 	width: 250px;
 	height: 275px;
-	background-image: url('super.jpg');
+	background-image: url('ressources/img/super.jpg');
 	opacity: 0.5;
 	font-family: 'Scriptonite Demo';
 
@@ -167,7 +167,7 @@ body
 	margin: 2px;
 	width: 250px;
 	height: 275px;
-	background-image: url('wonder.jpg');
+	background-image: url('ressources/img/wonder.jpg');
 	opacity: 0.5;
 	font-family: 'WHOOPASS';
 

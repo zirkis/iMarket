@@ -1,13 +1,19 @@
-/**
- * Created by Benjamin on 23/03/2016.
- */
 'use strict';
-var elm_textarea = document.getElementById('console');
-var elm_clock = document.getElementById('clock');
-
-
+/*
+ * ------------------------------------------------------------------------
+ * HTML : Clock,Text Area
+ * ------------------------------------------------------------------------
+ */
+const elm_textarea = document.getElementById('console');
+const elm_clock = document.getElementById('clock');
+/*
+ * ------------------------------------------------------------------------
+ * Class : Restaurant
+ * ------------------------------------------------------------------------
+ */
 module.exports = {
     Restaurant: class Restaurant {
+
         constructor(name, openHour, closeHour, market)
         {
             this.name = name;
@@ -32,9 +38,9 @@ module.exports = {
                 'Margarita Pizza' : ['Lettuce', 'Ham', 'Tomato']
             };
         }
+
         setOpen(bool){
             this.open = bool;
-            //console.log('Event Restaurant : ' +  this.name + " is " + this.getOpen());
             this.html_textArea('Event Restaurant : ' +  this.name + " is " + this.getOpen());
             document.getElementById(this.name + '2').innerHTML = this.getOpen();
         }
@@ -49,6 +55,7 @@ module.exports = {
                 return 'CLOSED';
             }
         }
+
         getNumberOfReceipts(){
             var numberReceipts = 0;
             for (let i in this.receipts){
@@ -56,17 +63,13 @@ module.exports = {
             }
             return numberReceipts;
         }
-        addIngredient(ingredient, quantity){
-            this.ingredients[ingredient] = quantity;
-        }
-        addReceipt(receipt, ingredient){
-            this.receipts[receipt] = ingredient;
-        }
+
         fillStocks(){
             for (let i in this.ingredients){
                 this.ingredients[i] +=5;
             }
         }
+
         isReceiptAvailable(receipt){
             var ok = true;
             for (let i in this.receipts[receipt]) {
@@ -76,6 +79,7 @@ module.exports = {
             }
             return ok;
         }
+
         isAnyReceiptAvailable(){
             var isAny = false;
             var isAvail = false;
@@ -87,16 +91,18 @@ module.exports = {
                 }
             }
             return isAny;
-
         }
+
         timeToServe(){
             var servingTime = Math.floor(Math.random() * (50 - 5 + 1) + 5);
             return servingTime;
         }
+
         timeToFillStocks(){
             var fillingTime = Math.floor(Math.random() * (75 - 15 + 1) + 15);
             return fillingTime;
         }
+
         bookTheIngredients(receipt, timeToServe){
             for (let i in this.receipts[receipt]){
                 this.ingredients[this.receipts[receipt][i]] -= 1;
@@ -109,6 +115,7 @@ module.exports = {
                 },timeToServe*30+100);
             }
         }
+
         cookTheMeal(receipt, timeToServe, waitingResistance, id){
             var bonus = 1;
             if (timeToServe <= waitingResistance-10){
@@ -119,21 +126,15 @@ module.exports = {
             }
             bonus *= (24 - (this.closeHour - this.openHour));
             this.score += bonus;
-            //console.log('Event Restaurant : ' + this.name + ' cooked the meal ' + receipt + ' for client number ' + id + ' !' + ' Time to serve : '+ timeToServe + 'min, Customer waiting resistance : ' + waitingResistance +'min. ' + this.name + ' got +' + bonus + 'pt(s) !');
             this.html_textArea('Event Restaurant : ' + this.name + ' cooked the meal ' + receipt + ' for client number ' + id + ' !' + ' Time to serve : '+ timeToServe + 'min, Customer waiting resistance : ' + waitingResistance +'min. ' + this.name + ' got +' + bonus + 'pt(s) !');
-            //console.log(this.ingredients);
             this.displayStocks(this.ingredients);
-            //console.log('Time to serve : '+ timeToServe + 'min, Customer waiting resistance : ' + waitingResistance +'min');
-            //this.html_textArea('Time to serve : '+ timeToServe + 'min, Customer waiting resistance : ' + waitingResistance +'min');
-            //console.log(this.name + ' got +' + bonus + 'pt(s) ! ' + this.name + ' score : ' + this.score);
-            //this.html_textArea(this.name + ' got +' + bonus + 'pt(s) !');
             this.client += 1;
             document.getElementById(this.name + '5').innerHTML = 'Score : ' + this.score;
             document.getElementById(this.name + '3').innerHTML = 'Clients : ' + this.client;
         }
+
        goToMarket(){
             return new Promise((resolve, reject) => {
-                //console.log('Event Restaurant : ' + this.name + ' arrived at ' + this.market.name);
                 this.html_textArea('Event Restaurant : ' + this.name + ' arrived at ' + this.market.name);
                 document.getElementById(this.name + '2').innerHTML = 'Market';
                 document.getElementById(this.name + '0').style.border = '2px green solid';
@@ -143,17 +144,12 @@ module.exports = {
                         this.html_status('CLOSED');
                         this.fillStocks();
                         this.market.emptyStocks();
-                        //console.log('Event Restaurant : ' + this.name + ' filled its stocks at ' + this.market.name + ' in ' + timeToFill + 'min. Stocks :');
-                        //this.html_textArea('Event Restaurant : ' + this.name + ' filled its stocks at ' + this.market.name + ' in ' + timeToFill + 'min.');
-                        //console.log(this.ingredients),
                         this.displayStocks(this.ingredients);
                         resolve('Event Restaurant : ' + this.name + ' filled its stocks at ' + this.market.name + ' in ' + timeToFill + 'min.');
                     }, timeToFill*30)
                 }
                 else {
-                    //console.log('Event Restaurant : ' + this.name + ' tried to fill its stocks but ' + this.market.name + ' is close !');
                     this.html_status('CLOSED');
-                    //this.html_textArea('Event Restaurant : ' + this.name + ' tried to fill its stocks but ' + this.market.name + ' is close !');
                     reject('Event Restaurant : ' + this.name + ' tried to fill its stocks but ' + this.market.name + ' is close !');
                     setTimeout(() => {
                         this.goToMarket()
@@ -170,10 +166,12 @@ module.exports = {
                 elm_textarea.scrollTop = elm_textarea.scrollHeight;
             }
         }
+
         html_status(text){
             document.getElementById(this.name + '2').innerHTML = text;
             document.getElementById(this.name + '0').style.border = '2px #404040 solid';
         }
+        
         displayStocks(json){
             var list = '';
             for (let i in json){
