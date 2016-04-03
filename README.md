@@ -6,6 +6,8 @@ By Jocelyne BOUN, Guillaume DUBOIS & Benjamin HAOUI
 To run the project, make sure your speakers are turned on and simply enter into your CLI :
 
 - $ cd iMarket
+- $ npm install npm -g
+- $ npm install eclectron-prebuilt
 - $ npm start
 
 Screenshots :
