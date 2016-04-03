@@ -7,7 +7,7 @@ To run the project, make sure your speakers are turned on and simply enter into 
 
 - $ cd iMarket
 - $ npm install npm -g
-- $ npm install eclectron-prebuilt
+- $ npm install electron-prebuilt
 - $ npm start
 
 Screenshots :
