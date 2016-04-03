@@ -9,7 +9,7 @@ To run the project, make sure your speakers are turned on and simply enter into 
 - $ npm start
 
 Screenshots :
-![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.05.png)
-![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.22.png)
-![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.50.png)
-![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/screenshots/Capture%20d’écran%202016-04-02%20à%2000.51.05.png)
+![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/ressources/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.05.png)
+![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/ressources/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.22.png)
+![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/ressources/screenshots/Capture%20d’écran%202016-04-02%20à%2000.17.50.png)
+![alt tag](https://github.com/zirkis/Market-Simulation/blob/master/ressources/screenshots/Capture%20d’écran%202016-04-02%20à%2000.51.05.png)
