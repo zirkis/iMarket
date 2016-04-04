@@ -2,15 +2,15 @@
   "name": "iMarket",
   "version": "1.0.0",
   "description": "This is a market supply, restaurant service & customers events simulation",
-  "main": "index.js",
-  "scripts": {
+  "main": "app/index.js",
+   "scripts": {
     "start": "electron ."
   },
-  "author": "Jocelyne BOUN, Guillaume DUBOIS & Benjamin HAOUI",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.2",
     "app": "^0.1.0",
+    "electron-prebuilt": "^0.37.3",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
@@ -21,13 +21,7 @@
     "time-grunt": "^1.3.0"
   },
   "dependencies": {
-    "app": "^0.1.0",
-    "electron": "^0.4.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-execute": "^0.2.2",
-    "jshint-stylish": "^2.1.0",
-    "load-grunt-tasks": "^3.4.1",
-    "time-grunt": "^1.3.0",
-    "util": "^0.10.3"
+    "bluebird": "^3.3.4",
+    "electron-prebuilt": "^0.37.4"
   }
 }
