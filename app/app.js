@@ -146,17 +146,19 @@ emitterTime.on('signal', (unit) => {
    * Creation of Customers & Clients Counter Update
    * ------------------------------------------------------------------------
    */
-  if ((minutes == 20 || minutes == 40) && hours >= 9 && hours < 23) {
-    var numberRandom = Math.floor(Math.random() * 3);
-    /*jslint loopfunc: true */
-    for (let i = 0; i < numberRandom; i++) {
-      clients.push(new importCus.Customer(id, restaurants));
-      clients[id].tryRestaurant()
-        .then((data) => HtmlTextArea(data))
-        .catch((data) => HtmlTextArea(data));
-      id++;
-      numberOfClients++;
-      ElmClient.innerHTML = 'Clients' + '</br>' + numberOfClients;
+  if (minutes == 20 || minutes == 50) {
+    if (hours >= 9 && hours < 23) {
+      var numberRandom = Math.floor(Math.random() * 3);
+      /*jslint loopfunc: true */
+      for (let i = 0; i < numberRandom; i++) {
+        clients.push(new importCus.Customer(id, restaurants));
+        clients[id].tryRestaurant()
+          .then((data) => HtmlTextArea(data))
+          .catch((data) => HtmlTextArea(data));
+        id++;
+        numberOfClients++;
+        ElmClient.innerHTML = 'Clients' + '</br>' + numberOfClients;
+      }
     }
   }
   /*
