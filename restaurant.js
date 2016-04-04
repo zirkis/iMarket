@@ -24,12 +24,12 @@ module.exports = {
             this.client = 0;
             this.market = market;
             this.ingredients = {
-                Ham : 5,
-                Beef : 5,
-                Cheese : 5,
-                Tomato : 5,
-                Salmone : 5,
-                Lettuce : 5
+                Ham : 0,
+                Beef : 1,
+                Cheese : 1,
+                Tomato : 1,
+                Salmone : 0,
+                Lettuce : 0
             };
             this.receipts = {
                 'Veggie Pizza' : ['Cheese', 'Lettuce', 'Tomato'],

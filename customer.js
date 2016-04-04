@@ -78,14 +78,14 @@ module.exports = {
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but this meal is not available anymore !');
                     setTimeout(() => {this.chooseMeal(restaurant)
                         .then((data) => this.html_textArea(data))
-                        .catch((data) => this.html_textArea(data));},100);
+                        .catch((data) => this.html_textArea(data));},50);
 
                 }
                 else if (!restaurant.isReceiptAvailable(chosenReceiptName) && !restaurant.isAnyReceiptAvailable()){
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but there is no meal available anymore !');
-                    this.tryRestaurant(this.restaurantsList)
+                     setTimeout(() => {this.tryRestaurant(this.restaurantsList)
                         .then((data) => this.html_textArea(data))
-                        .catch((data) => this.html_textArea(data));
+                        .catch((data) => this.html_textArea(data));},50);
                 }
             });
         }
