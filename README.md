@@ -9,6 +9,7 @@ To run the project, make sure your speakers are turned on and simply enter into 
 - $ cd iMarket
 - $ npm install npm -g
 - $ npm install electron-prebuilt
+- $ npm install bluebird
 - $ npm start
 
 Screenshots :
