@@ -171,7 +171,7 @@ module.exports = {
             document.getElementById(this.name + '2').innerHTML = text;
             document.getElementById(this.name + '0').style.border = '2px #404040 solid';
         }
-        
+
         displayStocks(json){
             var list = '';
             for (let i in json){

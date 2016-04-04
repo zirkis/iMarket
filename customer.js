@@ -74,14 +74,14 @@ module.exports = {
                     resolve('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName + ' and this meal is available !');
                     setTimeout(() => {restaurant.cookTheMeal(chosenReceiptName, timeToServe, this.waitingResistance, this.id); this.setAlreadyEaten();}, timeToServe*30);
                 }
-                else if (restaurant.isAnyReceiptAvailable()) {
+                else if (!restaurant.isReceiptAvailable(chosenReceiptName) && restaurant.isAnyReceiptAvailable()) {
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but this meal is not available anymore !');
-                    this.chooseMeal(restaurant)
+                    setTimeout(() => {this.chooseMeal(restaurant)
                         .then((data) => this.html_textArea(data))
-                        .catch((data) => this.html_textArea(data));
+                        .catch((data) => this.html_textArea(data));},100);
 
                 }
-                else if (!restaurant.isAnyReceiptAvailable()){
+                else if (!restaurant.isReceiptAvailable(chosenReceiptName) && !restaurant.isAnyReceiptAvailable()){
                     reject('Event Customer : The client number ' + this.id + ' wants to order ' + chosenReceiptName  + ' but there is no meal available anymore !');
                     this.tryRestaurant(this.restaurantsList)
                         .then((data) => this.html_textArea(data))
