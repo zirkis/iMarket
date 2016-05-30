@@ -1,9 +1,9 @@
 {
   "name": "iMarket",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This is a market supply, restaurant service & customers events simulation",
   "main": "app/index.js",
-   "scripts": {
+  "scripts": {
     "start": "electron ."
   },
   "author": "",
